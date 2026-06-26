@@ -197,6 +197,13 @@ export default function Home() {
             Find My Gear →
           </button>
 
+          <a
+            href="/cardio-plan"
+            className="w-full py-3 flex items-center justify-center gap-2 border border-zinc-700 text-zinc-400 hover:text-white hover:border-zinc-500 rounded-2xl transition-colors text-sm"
+          >
+            🏃 Free 4-Week Cardio Plan →
+          </a>
+
         </div>
       </main>
     );
