@@ -138,29 +138,54 @@ export default function Home() {
 
   if (!started) {
     return (
-      <main className="min-h-screen bg-zinc-950 text-white flex flex-col items-center justify-center px-4">
-        <div className="max-w-lg w-full text-center">
-          <div className="text-5xl mb-6">🥊</div>
-          <h1 className="text-4xl font-bold text-white mb-3">
-            What Muay Thai Gear<br /><span className="text-red-500">Should You Buy?</span>
-          </h1>
-          <p className="text-zinc-400 text-lg mb-8">
-            Stop guessing. Answer 15 quick questions about your training style, budget, and body — get a personalized kit recommendation in 2 minutes.
-          </p>
-          <div className="flex flex-col gap-3 mb-8 text-left">
-            {["🥊 Gloves matched to your wrist strength & training style", "🦵 Shin guards with the right ankle & knee coverage for you", "🏋️ Thai pads suited to your holder's experience", "💰 All within your budget"].map((item) => (
-              <div key={item} className="flex items-center gap-3 bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-300">
-                {item}
-              </div>
-            ))}
+      <main className="min-h-screen bg-zinc-950 text-white flex flex-col items-center justify-center px-4 py-8">
+        <div className="max-w-lg w-full">
+          {/* Hero */}
+          <div className="text-center mb-6">
+            <div className="inline-block bg-red-900/30 border border-red-800 text-red-400 text-xs font-semibold px-3 py-1 rounded-full mb-4">
+              Free · No signup · 2 minutes
+            </div>
+            <h1 className="text-4xl font-bold text-white mb-3 leading-tight">
+              Stop guessing.<br /><span className="text-red-500">Get the right gear.</span>
+            </h1>
+            <p className="text-zinc-400 text-base">
+              Answer a few quick questions and get a personalized Muay Thai kit — matched to your training style, wrist strength, and budget.
+            </p>
           </div>
+
+          {/* Example result preview */}
+          <div className="bg-zinc-900 border border-zinc-700 rounded-2xl p-4 mb-6">
+            <p className="text-xs text-zinc-500 uppercase font-semibold tracking-widest mb-3">Example result</p>
+            <div className="flex items-center justify-between mb-2">
+              <div>
+                <p className="text-xs text-red-400 font-semibold uppercase">Gloves</p>
+                <p className="text-white font-semibold text-sm">Fairtex BGV1</p>
+                <p className="text-zinc-500 text-xs">Chosen for: wrist support, sparring</p>
+              </div>
+              <span className="text-white font-bold">$89</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-xs text-red-400 font-semibold uppercase">Shin Guards</p>
+                <p className="text-white font-semibold text-sm">Fairtex SP5</p>
+                <p className="text-zinc-500 text-xs">Chosen for: ankle coverage, strap-on</p>
+              </div>
+              <span className="text-white font-bold">$89</span>
+            </div>
+          </div>
+
+          {/* CTA */}
           <button
             onClick={() => setStarted(true)}
-            className="w-full py-4 bg-red-600 hover:bg-red-700 text-white text-lg font-bold rounded-2xl transition-colors"
+            className="w-full py-4 bg-red-600 hover:bg-red-700 text-white text-lg font-bold rounded-2xl transition-colors mb-3"
           >
             Find My Gear →
           </button>
-          <p className="text-zinc-600 text-xs mt-4">Free · No signup · 2 minutes</p>
+
+          {/* Social proof */}
+          <p className="text-center text-zinc-600 text-xs">
+            Trusted by fighters in 🇺🇸 🇦🇺 🇬🇧 🇩🇪 and more
+          </p>
         </div>
       </main>
     );
