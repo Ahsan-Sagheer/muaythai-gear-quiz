@@ -125,6 +125,21 @@ export default function Home() {
             <span className="text-3xl font-bold text-red-400">${total}</span>
           </div>
 
+          {/* Cardio plan upsell */}
+          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 mb-4 flex items-center justify-between gap-4">
+            <div>
+              <p className="text-xs text-red-400 font-semibold uppercase tracking-widest mb-1">Free Download</p>
+              <p className="text-white font-bold text-sm">4-Week Muay Thai Cardio Plan</p>
+              <p className="text-zinc-500 text-xs">Stop gassing out. Build fight-ready conditioning.</p>
+            </div>
+            <a
+              href="/cardio-plan"
+              className="flex-shrink-0 bg-red-600 hover:bg-red-700 text-white font-semibold px-4 py-2 rounded-xl text-sm transition-colors"
+            >
+              Get it →
+            </a>
+          </div>
+
           <button
             onClick={restart}
             className="w-full border border-zinc-700 text-zinc-400 hover:text-white hover:border-zinc-500 py-3 rounded-xl transition-colors"
