@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Muay Thai 4-Week Cardio Training Plan — Stop Gassing Out",
-  description: "A 4-week Muay Thai cardio plan built specifically for fighters. Progressive conditioning from beginner to fight-ready in 28 days. Free download.",
+  description: "A 4-week Muay Thai cardio plan built specifically for fighters. Daily roadwork, bag rounds, and long runs up to 12km. Instant PDF download.",
 };
 
 const weeks = [
@@ -68,20 +68,21 @@ export default function Cardioplan() {
           </div>
         </div>
 
-        {/* Download CTA */}
+        {/* Purchase CTA */}
         <div className="bg-red-600 rounded-2xl p-6 text-center mb-6">
-          <p className="text-white font-bold text-xl mb-1">Free Download</p>
-          <p className="text-red-200 text-sm mb-4">PDF — works on any device</p>
+          <p className="text-white font-bold text-xl mb-1">Get the Plan — $7</p>
+          <p className="text-red-200 text-sm mb-4">Instant PDF download · One-time payment</p>
           <a
-            href="/muaythai-cardio-plan.pdf"
-            download="muaythai-cardio-plan.pdf"
+            href="https://7180789771297.gumroad.com/l/uipzoc"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-white text-red-600 font-bold px-8 py-3 rounded-xl text-base hover:bg-red-50 transition-colors"
           >
-            Download the Plan →
+            Buy Now →
           </a>
         </div>
 
-        <p className="text-center text-zinc-600 text-xs mb-10">No signup. No email required. Just download and start.</p>
+        <p className="text-center text-zinc-600 text-xs mb-10">Secure checkout via Gumroad · 30-day money back guarantee</p>
 
         {/* Gear CTA */}
         <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 text-center">

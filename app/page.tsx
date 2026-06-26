@@ -128,7 +128,7 @@ export default function Home() {
           {/* Cardio plan upsell */}
           <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 mb-4 flex items-center justify-between gap-4">
             <div>
-              <p className="text-xs text-red-400 font-semibold uppercase tracking-widest mb-1">Free Download</p>
+              <p className="text-xs text-red-400 font-semibold uppercase tracking-widest mb-1">$7 PDF</p>
               <p className="text-white font-bold text-sm">4-Week Muay Thai Cardio Plan</p>
               <p className="text-zinc-500 text-xs">Stop gassing out. Build fight-ready conditioning.</p>
             </div>
@@ -201,7 +201,7 @@ export default function Home() {
             href="/cardio-plan"
             className="w-full py-3 flex items-center justify-center gap-2 border border-zinc-700 text-zinc-400 hover:text-white hover:border-zinc-500 rounded-2xl transition-colors text-sm"
           >
-            🏃 Free 4-Week Cardio Plan →
+            🏃 4-Week Cardio Plan — $7 →
           </a>
 
         </div>
