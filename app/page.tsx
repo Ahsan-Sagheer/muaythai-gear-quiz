@@ -182,10 +182,6 @@ export default function Home() {
             Find My Gear →
           </button>
 
-          {/* Social proof */}
-          <p className="text-center text-zinc-600 text-xs">
-            Trusted by fighters in 🇺🇸 🇦🇺 🇬🇧 🇩🇪 and more
-          </p>
         </div>
       </main>
     );
