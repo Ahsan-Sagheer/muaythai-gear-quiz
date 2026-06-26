@@ -38,7 +38,7 @@ def week_table(days):
     data = [["Day", "Session", "Duration", "Focus"]]
     for d in days:
         data.append(d)
-    t = Table(data, colWidths=[0.7*inch, 2.4*inch, 1.1*inch, 2.6*inch])
+    t = Table(data, colWidths=[0.6*inch, 2.1*inch, 1.0*inch, 2.8*inch])
     t.setStyle(TableStyle([
         ("BACKGROUND", (0,0), (-1,0), RED),
         ("TEXTCOLOR", (0,0), (-1,0), WHITE),
@@ -101,69 +101,69 @@ story.append(Spacer(1, 0.2*inch))
 # Week 1
 story.append(PageBreak())
 story.append(Paragraph("WEEK 1 — BUILD THE BASE", h1_style))
-story.append(Paragraph("Goal: Establish your aerobic base. Everything at moderate intensity. Don't push to failure.", body_style))
+story.append(Paragraph("Goal: Establish your aerobic base with daily roadwork. Muay Thai fighters run every day — this is where it starts.", body_style))
 story.append(Spacer(1, 0.1*inch))
 story.append(week_table([
-    ["Mon", "Roadwork (steady run)", "30 min", "RPE 6 — conversational pace"],
-    ["Tue", "Jump rope + shadowboxing", "20 min", "3x3 min rope, 3x3 min shadow"],
-    ["Wed", "REST", "—", "Active recovery: light walk or stretch"],
-    ["Thu", "Bag rounds", "20 min", "5x3 min rounds, RPE 6-7"],
-    ["Fri", "Jump rope intervals", "20 min", "30 sec fast / 30 sec slow x 20"],
-    ["Sat", "Long slow run", "40 min", "RPE 5-6 — build aerobic base"],
-    ["Sun", "REST", "—", "Full recovery"],
+    ["Mon", "Roadwork — easy run", "5 km", "RPE 6 — conversational pace, flat route"],
+    ["Tue", "Roadwork + jump rope", "5 km + 15 min", "Easy run, then 5x3 min rope with 1 min rest"],
+    ["Wed", "Roadwork — easy run", "5 km", "RPE 6 — same route, focus on breathing"],
+    ["Thu", "Roadwork + bag rounds", "5 km + 20 min", "Easy run, then 5x3 min bag at RPE 7"],
+    ["Fri", "Roadwork — easy run", "5 km", "RPE 6 — last easy day of the week"],
+    ["Sat", "Long slow run", "8 km", "RPE 5-6 — build aerobic base, no rush"],
+    ["Sun", "REST", "—", "Full recovery — mandatory"],
 ]))
 story.append(Spacer(1, 0.15*inch))
 story.append(Paragraph("Week 1 Tips:", label_style))
-story.append(Paragraph("Focus on breathing rhythm. Exhale on every strike. Never hold your breath during bag rounds — this is the most common beginner mistake.", note_style))
+story.append(Paragraph("The daily runs will feel easy — that's correct. Aerobic base takes time to build and rushing it leads to injury. Exhale on every strike during bag rounds. Never hold your breath.", note_style))
 
 # Week 2
 story.append(Spacer(1, 0.3*inch))
-story.append(Paragraph("WEEK 2 — ADD INTENSITY", h1_style))
-story.append(Paragraph("Goal: Introduce higher intensity intervals. Start feeling the burn but keep technique clean.", body_style))
+story.append(Paragraph("WEEK 2 — BUILD VOLUME", h1_style))
+story.append(Paragraph("Goal: Increase run distance and start adding intensity. Legs should feel stronger by end of week.", body_style))
 story.append(Spacer(1, 0.1*inch))
 story.append(week_table([
-    ["Mon", "Interval run", "30 min", "1 min fast / 2 min jog x 10"],
-    ["Tue", "Jump rope + bag rounds", "30 min", "4x3 min rope, 4x3 min bag RPE 7"],
-    ["Wed", "REST", "—", "Stretch or light yoga"],
-    ["Thu", "Shadowboxing circuits", "25 min", "5x3 min: jab-cross-teep combos non-stop"],
-    ["Fri", "Hill sprints or stair runs", "20 min", "10x30 sec sprint, walk back down"],
-    ["Sat", "Long run + bag finisher", "50 min", "35 min run + 3x3 min bag RPE 8"],
+    ["Mon", "Roadwork — steady run", "6 km", "RPE 6-7 — slightly faster than week 1"],
+    ["Tue", "Roadwork + shadowboxing", "6 km + 20 min", "Run, then 5x3 min shadow: jab-cross-teep non-stop"],
+    ["Wed", "Roadwork — easy run", "5 km", "RPE 6 — active recovery day"],
+    ["Thu", "Roadwork + bag rounds", "6 km + 25 min", "Run, then 6x3 min bag at RPE 7-8"],
+    ["Fri", "Hill sprints + easy jog", "30 min total", "10x30 sec hill sprint, walk back, then 10 min jog"],
+    ["Sat", "Long run", "10 km", "RPE 6 — longest run of the plan so far, steady pace"],
     ["Sun", "REST", "—", "Full recovery"],
 ]))
 story.append(Spacer(1, 0.15*inch))
 story.append(Paragraph("Week 2 Tips:", label_style))
-story.append(Paragraph("Your legs will be sore — that's normal. The teep (push kick) is one of the most cardio-intensive techniques. Practice it non-stop for a full round to build specific Muay Thai conditioning.", note_style))
+story.append(Paragraph("The 10km Saturday run is your milestone. Don't race it — if you finish at a jog, that's perfect. The teep (push kick) non-stop for a full round will destroy your hip flexors in the best way.", note_style))
 
 # Week 3
 story.append(PageBreak())
 story.append(Paragraph("WEEK 3 — FIGHT SIMULATION", h1_style))
-story.append(Paragraph("Goal: Train like you're preparing for a fight. 5-round sessions, mix of all tools.", body_style))
+story.append(Paragraph("Goal: Combine running base with fight-pace bag sessions. Train like you're preparing for a real fight.", body_style))
 story.append(Spacer(1, 0.1*inch))
 story.append(week_table([
-    ["Mon", "5-round bag session", "35 min", "5x3 min full pace, 1 min rest — RPE 8"],
-    ["Tue", "Roadwork intervals", "35 min", "2 min fast / 1 min jog x 10"],
-    ["Wed", "Active recovery", "20 min", "Light shadowboxing + stretching"],
-    ["Thu", "Circuit: rope/shadow/bag/burpees", "30 min", "4 rounds of all 4, 30 sec each, no rest"],
-    ["Fri", "Sprint finishers", "25 min", "10x100m sprints — full recovery between"],
-    ["Sat", "Full fight simulation", "45 min", "5x5 min rounds: shadow+bag+rope rotation"],
+    ["Mon", "Roadwork — interval run", "6 km", "2 min fast / 1 min jog alternating throughout"],
+    ["Tue", "Roadwork + 5-round bag", "5 km + 35 min", "Easy run, then 5x3 min bag full pace, RPE 8-9"],
+    ["Wed", "Roadwork — easy run", "5 km", "RPE 6 — active recovery, shake out the legs"],
+    ["Thu", "Roadwork + circuit", "5 km + 30 min", "Run, then 4 rounds: rope/shadow/bag/burpees, 45 sec each no rest"],
+    ["Fri", "Sprint session", "30 min", "10x100m full sprints, walk back — no jogging between"],
+    ["Sat", "Long run", "12 km", "RPE 6-7 — push the distance, controlled effort"],
     ["Sun", "REST", "—", "Full recovery — mandatory"],
 ]))
 story.append(Spacer(1, 0.15*inch))
 story.append(Paragraph("Week 3 Tips:", label_style))
-story.append(Paragraph("The circuit on Thursday is brutal — that's the point. Muay Thai fights don't pause between techniques. Training without rest between stations teaches your body to keep moving when it wants to stop.", note_style))
+story.append(Paragraph("The Thursday circuit is brutal — that's the point. Muay Thai fights don't pause. The 12km Saturday run is your biggest aerobic day. If you complete it you're fight-ready on the cardio base.", note_style))
 
 # Week 4
 story.append(Spacer(1, 0.3*inch))
 story.append(Paragraph("WEEK 4 — PEAK & TEST", h1_style))
-story.append(Paragraph("Goal: Hit peak conditioning then taper. By end of week you should last 5 full rounds without gassing.", body_style))
+story.append(Paragraph("Goal: Hit peak conditioning then taper. By Friday you should last 5 full rounds without gassing.", body_style))
 story.append(Spacer(1, 0.1*inch))
 story.append(week_table([
-    ["Mon", "Peak bag session", "40 min", "6x3 min bag, RPE 8-9"],
-    ["Tue", "Interval run — peak", "35 min", "1 min max / 1 min jog x 15"],
-    ["Wed", "REST", "—", "Full rest — body preparing for peak"],
-    ["Thu", "Light technical session", "25 min", "4x3 min shadowboxing — focus on form"],
-    ["Fri", "5-round test", "35 min", "5x3 min bag at RPE 9 — track how you feel"],
-    ["Sat", "Easy jog", "30 min", "RPE 5 — flush the legs"],
+    ["Mon", "Roadwork — interval run + bag", "6 km + 25 min", "1 min fast / 1 min jog throughout, then 5x3 min bag RPE 8"],
+    ["Tue", "Roadwork — hard run", "8 km", "RPE 7-8 — push harder than week 1, same distance feels easier"],
+    ["Wed", "Roadwork — easy run", "5 km", "RPE 6 — active recovery, flush the legs"],
+    ["Thu", "Roadwork + shadowboxing", "5 km + 20 min", "Easy run, then 4x3 min shadow — clean technique, not pace"],
+    ["Fri", "5-round bag test", "35 min", "5x3 min bag at RPE 9 — this is your fitness test"],
+    ["Sat", "Long run — final", "10 km", "RPE 6 — run the same 10km as week 2. Notice the difference."],
     ["Sun", "REST", "—", "Celebrate — you made it"],
 ]))
 story.append(Spacer(1, 0.15*inch))
