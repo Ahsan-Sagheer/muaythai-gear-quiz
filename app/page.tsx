@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { quizSteps, QuizAnswer } from "@/data/quiz";
 import { getRecommendations, getTotalPrice, Recommendation } from "@/lib/recommend";
 
@@ -43,7 +43,20 @@ export default function Home() {
   const progress = Math.round((step / visibleSteps.length) * 100);
 
   function handleAnswer(value: string | boolean) {
-    setAnswers((prev) => ({ ...prev, [currentStep.id]: value }));
+    const updated = { ...answers, [currentStep.id]: value };
+    setAnswers(updated);
+    // Auto-advance on boolean and single-choice questions after a short delay
+    setTimeout(() => {
+      const updatedVisible = quizSteps.filter((s) => {
+        if (!s.dependsOn) return true;
+        return updated[s.dependsOn.field] === s.dependsOn.value;
+      });
+      if (step < updatedVisible.length - 1) {
+        setStep((s) => s + 1);
+      } else {
+        setRecommendations(getRecommendations(updated));
+      }
+    }, 300);
   }
 
   function next() {
@@ -165,7 +178,11 @@ export default function Home() {
       <div className="max-w-xl mx-auto w-full px-4 mb-6">
         <div className="flex justify-between text-xs text-zinc-500 mb-1">
           <span>Question {step + 1} of {visibleSteps.length}</span>
-          <span>{progress}%</span>
+          <span className="text-red-400 font-semibold">
+            {visibleSteps.length - step - 1 === 0
+              ? "Last question!"
+              : `${visibleSteps.length - step - 1} left`}
+          </span>
         </div>
         <div className="h-1.5 bg-zinc-800 rounded-full">
           <div
@@ -227,17 +244,14 @@ export default function Home() {
           {step > 0 && (
             <button
               onClick={prev}
-              className="flex-1 py-3 border border-zinc-700 text-zinc-400 hover:text-white rounded-xl transition-colors"
+              className="py-3 px-5 border border-zinc-700 text-zinc-400 hover:text-white rounded-xl transition-colors"
             >
-              Back
+              ← Back
             </button>
           )}
-          <button
-            onClick={next}
-            className="flex-1 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl transition-colors"
-          >
-            {step === visibleSteps.length - 1 ? "Get My Kit →" : "Next →"}
-          </button>
+          <p className="flex-1 text-center text-xs text-zinc-600 self-center">
+            {currentStep?.type === "boolean" ? "Tap to auto-advance" : "Tap an option to continue"}
+          </p>
         </div>
       </div>
     </main>
