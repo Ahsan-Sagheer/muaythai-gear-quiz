@@ -29,6 +29,7 @@ const defaultAnswers: QuizAnswer = {
 };
 
 export default function Home() {
+  const [started, setStarted] = useState(false);
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<QuizAnswer>(defaultAnswers);
   const [recommendations, setRecommendations] = useState<Recommendation[] | null>(null);
@@ -117,6 +118,36 @@ export default function Home() {
           >
             Retake Quiz
           </button>
+        </div>
+      </main>
+    );
+  }
+
+  if (!started) {
+    return (
+      <main className="min-h-screen bg-zinc-950 text-white flex flex-col items-center justify-center px-4">
+        <div className="max-w-lg w-full text-center">
+          <div className="text-5xl mb-6">🥊</div>
+          <h1 className="text-4xl font-bold text-white mb-3">
+            What Muay Thai Gear<br /><span className="text-red-500">Should You Buy?</span>
+          </h1>
+          <p className="text-zinc-400 text-lg mb-8">
+            Stop guessing. Answer 15 quick questions about your training style, budget, and body — get a personalized kit recommendation in 2 minutes.
+          </p>
+          <div className="flex flex-col gap-3 mb-8 text-left">
+            {["🥊 Gloves matched to your wrist strength & training style", "🦵 Shin guards with the right ankle & knee coverage for you", "🏋️ Thai pads suited to your holder's experience", "💰 All within your budget"].map((item) => (
+              <div key={item} className="flex items-center gap-3 bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-300">
+                {item}
+              </div>
+            ))}
+          </div>
+          <button
+            onClick={() => setStarted(true)}
+            className="w-full py-4 bg-red-600 hover:bg-red-700 text-white text-lg font-bold rounded-2xl transition-colors"
+          >
+            Find My Gear →
+          </button>
+          <p className="text-zinc-600 text-xs mt-4">Free · No signup · 2 minutes</p>
         </div>
       </main>
     );
